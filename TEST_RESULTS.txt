@@ -1,0 +1,154 @@
+TAP version 13
+# (node:4681) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: normalizes line breaks, tabs, and repeated whitespace
+ok 1 - normalizes line breaks, tabs, and repeated whitespace
+  ---
+  duration_ms: 1.3659
+  type: 'test'
+  ...
+# Subtest: finds a unique passage even when whitespace is normalized
+ok 2 - finds a unique passage even when whitespace is normalized
+  ---
+  duration_ms: 0.39692
+  type: 'test'
+  ...
+# Subtest: uses prefix and suffix context to choose among duplicate passages
+ok 3 - uses prefix and suffix context to choose among duplicate passages
+  ---
+  duration_ms: 0.531487
+  type: 'test'
+  ...
+# Subtest: uses the position hint when repeated quotes have no surrounding context
+ok 4 - uses the position hint when repeated quotes have no surrounding context
+  ---
+  duration_ms: 0.296212
+  type: 'test'
+  ...
+# Subtest: returns null when the quote is absent or empty
+ok 5 - returns null when the quote is absent or empty
+  ---
+  duration_ms: 0.463053
+  type: 'test'
+  ...
+# Subtest: considers overlapping quote occurrences
+ok 6 - considers overlapping quote occurrences
+  ---
+  duration_ms: 0.625438
+  type: 'test'
+  ...
+# (node:4682) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: normalizePageUrl removes fragments but preserves query strings
+ok 7 - normalizePageUrl removes fragments but preserves query strings
+  ---
+  duration_ms: 1.980594
+  type: 'test'
+  ...
+# Subtest: originPattern only permits HTTP and HTTPS origins
+ok 8 - originPattern only permits HTTP and HTTPS origins
+  ---
+  duration_ms: 0.437198
+  type: 'test'
+  ...
+# Subtest: parseTags trims, de-duplicates, strips hashes, and caps tag count
+ok 9 - parseTags trims, de-duplicates, strips hashes, and caps tag count
+  ---
+  duration_ms: 1.339553
+  type: 'test'
+  ...
+# Subtest: markdownExport includes note, quote, tags, and original source
+ok 10 - markdownExport includes note, quote, tags, and original source
+  ---
+  duration_ms: 30.611455
+  type: 'test'
+  ...
+# Subtest: parseBackup accepts a supported DogEar backup and normalizes entries
+ok 11 - parseBackup accepts a supported DogEar backup and normalizes entries
+  ---
+  duration_ms: 0.652565
+  type: 'test'
+  ...
+# Subtest: parseBackup accepts backup files exported by the previous product name
+ok 12 - parseBackup accepts backup files exported by the previous product name
+  ---
+  duration_ms: 0.313181
+  type: 'test'
+  ...
+# Subtest: parseBackup rejects malformed backups without partial import
+ok 13 - parseBackup rejects malformed backups without partial import
+  ---
+  duration_ms: 3.739048
+  type: 'test'
+  ...
+# Subtest: parseBackup normalizes imported tags and trims collection metadata
+ok 14 - parseBackup normalizes imported tags and trims collection metadata
+  ---
+  duration_ms: 0.657474
+  type: 'test'
+  ...
+# Subtest: parseBackup rejects non-web source URLs
+ok 15 - parseBackup rejects non-web source URLs
+  ---
+  duration_ms: 5.474705
+  type: 'test'
+  ...
+# Subtest: package and Manifest V3 metadata use the DogEar identity
+ok 16 - package and Manifest V3 metadata use the DogEar identity
+  ---
+  duration_ms: 14.178744
+  type: 'test'
+  ...
+# (node:4714) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: migrates the original 0.x starter annotations into the DogEar namespace
+ok 17 - migrates the original 0.x starter annotations into the DogEar namespace
+  ---
+  duration_ms: 1.780546
+  type: 'test'
+  ...
+# Subtest: migrates existing 1.0 annotations, settings, and a pending selection
+ok 18 - migrates existing 1.0 annotations, settings, and a pending selection
+  ---
+  duration_ms: 0.800743
+  type: 'test'
+  ...
+# Subtest: a malformed current value does not crash migration or mask valid legacy data
+ok 19 - a malformed current value does not crash migration or mask valid legacy data
+  ---
+  duration_ms: 1.030096
+  type: 'test'
+  ...
+# Subtest: malformed storage with no recoverable legacy value safely returns an empty library
+ok 20 - malformed storage with no recoverable legacy value safely returns an empty library
+  ---
+  duration_ms: 0.607188
+  type: 'test'
+  ...
+# Subtest: serializes parallel saves without dropping either annotation
+ok 21 - serializes parallel saves without dropping either annotation
+  ---
+  duration_ms: 1.884929
+  type: 'test'
+  ...
+# Subtest: updates and deletes annotations while preserving identity
+ok 22 - updates and deletes annotations while preserving identity
+  ---
+  duration_ms: 3.484465
+  type: 'test'
+  ...
+# Subtest: new exports use DogEar identity and the current storage namespace
+ok 23 - new exports use DogEar identity and the current storage namespace
+  ---
+  duration_ms: 1.142515
+  type: 'test'
+  ...
+1..23
+# tests 23
+# suites 0
+# pass 23
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 492.084868

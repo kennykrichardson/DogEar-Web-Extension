@@ -1,0 +1,31 @@
+{
+  "name": "dogear-browser-extension",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit && vite build && node scripts/verify-build.mjs",
+    "preview": "vite preview",
+    "test": "node --experimental-strip-types --test",
+    "check": "npm run typecheck && npm test"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.2.1",
+    "lucide-react": "^1.70.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "vite": "^8.3.6"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.3.7",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^7.0.2",
+    "@types/node": "^22.10.2"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
