@@ -170,7 +170,7 @@ export function Popup() {
       <p><strong>Save a passage, add your perspective, and come back to it when it matters.</strong></p>
     </div>
 
-    <footer className="popup-footer"><span>LOCAL BY DESIGN</span><span><Command size={10}/> ALT + SHIFT + Z</span></footer>
+    <footer className="popup-footer"><span>LOCAL BY DESIGN</span><span><Command size={10}/> ALT + SHIFT + S</span></footer>
     {toastVisible && <div className="popup-toast" role="status" aria-live="polite"><Check size={16} strokeWidth={3}/> <span>Saved</span></div>}
   </main>;
 }

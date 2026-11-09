@@ -20,10 +20,6 @@ async function openWorkspace(query = ''): Promise<void> {
   await chrome.tabs.create({ url: `${workspaceUrl()}${suffix}` });
 }
 
-async function openPopup(windowId?: number): Promise<void> {
-  await chrome.action.openPopup(windowId === undefined ? undefined : { windowId });
-}
-
 async function injectAndHighlight(tabId: number, url: string): Promise<void> {
   const pattern = originPattern(url);
   if (!pattern) return;
@@ -35,7 +31,7 @@ async function injectAndHighlight(tabId: number, url: string): Promise<void> {
     return;
   }
   try {
-    await chrome.scripting.executeScript({ target: { tabId }, files: ['content.js'] });
+    await chrome.scripting.executeScript({ target: { tabId }, files: ['content.js'], world: 'ISOLATED' });
     const [annotations, settings] = await Promise.all([getAnnotations(), getSettings()]);
     if (!settings.showPageHighlights) {
       await chrome.tabs.sendMessage(tabId, { type: 'DOGEAR_CLEAR_HIGHLIGHTS' });
@@ -72,48 +68,40 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
   };
   if (tab.id) {
     try {
-      await chrome.scripting.executeScript({ target: { tabId: tab.id }, files: ['content.js'] });
+      await chrome.scripting.executeScript({ target: { tabId: tab.id }, files: ['content.js'], world: 'ISOLATED' });
       const response = await chrome.tabs.sendMessage(tab.id, { type: 'DOGEAR_GET_SELECTION' });
       if (response?.ok && response.selection?.quote) payload = response.selection as SelectionPayload;
     } catch { /* The context-menu selection remains a valid fallback anchor. */ }
   }
   await setPendingSelection(payload);
+
+  // A context-menu save must open the normal extension popup, never the library.
+  // The popup's existing capture flow reads the active tab selection.
   try {
-    await openPopup(tab.windowId);
-  } catch {
-    // Older Chromium builds may not expose programmatic popup opening.
-    // Preserve the capture instead of silently discarding the selected passage.
-    await openWorkspace('?capture=pending');
+    await chrome.action.openPopup();
+  } catch (error) {
+    // Do not silently redirect users to the full workspace. If the browser
+    // cannot open the popup from this context-menu invocation, leave the
+    // selection pending and let the user open DogEar from the toolbar.
+    console.warn('DogEar could not open its popup from the context menu.', error);
   }
 });
 
 chrome.commands.onCommand.addListener(async (command) => {
   if (command === 'open-dogear') {
-    try {
-      await openPopup();
-    } catch {
-      await openWorkspace();
-    }
+    await openWorkspace();
     return;
   }
   if (command === 'capture-selection') {
     const [tab] = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
     if (!tab?.id || !tab.url) { await openWorkspace(); return; }
     try {
-      await chrome.scripting.executeScript({ target: { tabId: tab.id }, files: ['content.js'] });
+      await chrome.scripting.executeScript({ target: { tabId: tab.id }, files: ['content.js'], world: 'ISOLATED' });
       const response = await chrome.tabs.sendMessage(tab.id, { type: 'DOGEAR_GET_SELECTION' });
-      if (response?.ok) {
-        await setPendingSelection(response.selection);
-        try {
-          await openPopup(tab.windowId);
-        } catch {
-          await openWorkspace('?capture=pending');
-        }
-      } else {
-        try { await openPopup(tab.windowId); } catch { await openWorkspace(); }
-      }
+      if (response?.ok) await setPendingSelection(response.selection);
+      await openWorkspace(response?.ok ? '?capture=pending' : '');
     } catch {
-      try { await openPopup(tab.windowId); } catch { await openWorkspace(); }
+      await openWorkspace();
     }
   }
 });

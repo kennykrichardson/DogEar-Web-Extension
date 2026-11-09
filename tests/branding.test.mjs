@@ -14,7 +14,7 @@ test('package and Manifest V3 metadata use the DogEar identity', async () => {
   assert.equal(manifest.short_name, 'DogEar');
   assert.equal(packageJson.name, 'dogear-browser-extension');
   assert.ok(manifest.commands['open-dogear']);
-  assert.equal(manifest.commands['open-dogear'].suggested_key.default, 'Alt+Shift+Z');
+  assert.equal(manifest.commands['open-dogear'].suggested_key.default, 'Alt+Shift+D');
 
   const iconPaths = [
     ...Object.values(manifest.icons),
