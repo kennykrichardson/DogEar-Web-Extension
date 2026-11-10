@@ -118,4 +118,4 @@ Whether you're researching a topic, studying, collecting references, or simply f
 **DogEar**  
 *Preserve the thought • Notes on the web*
 
-# Engineered by Kenny Richardson Kodipally
+# 🛠️Engineered by Kenny Richardson Kodipally
