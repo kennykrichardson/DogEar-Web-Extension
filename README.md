@@ -1,5 +1,7 @@
 # 🔰DogEar • Notes on the web
 
+🌐 **[Find the extension in the Edge Store](https://microsoftedge.microsoft.com/addons/detail/mfbjdinbaocanideccbnfajdjjgakifm)** 
+
 **Preserve the thought • Notes on the web**
 
 DogEar is a browser extension designed to help you save meaningful passages from webpages, attach personal notes, and revisit your ideas without losing their original context.
