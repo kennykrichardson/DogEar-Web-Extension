@@ -1,6 +1,6 @@
-# DogEar
+# 🔰DogEar • Notes on the web
 
-**Keep the thought. Not just the tab.**
+**Preserve the thought • Notes on the web**
 
 DogEar is a browser extension designed to help you save meaningful passages from webpages, attach personal notes, and revisit your ideas without losing their original context.
 
@@ -117,3 +117,5 @@ Whether you're researching a topic, studying, collecting references, or simply f
 
 **DogEar**  
 *Preserve the thought • Notes on the web*
+
+# Engineered by Kenny Richardson Kodipally
