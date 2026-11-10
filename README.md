@@ -2,44 +2,118 @@
 
 **Keep the thought. Not just the tab.**
 
-DogEar is a browser extension for saving meaningful passages from webpages, adding personal notes, and returning to those thoughts with their source context intact.
+DogEar is a browser extension designed to help you save meaningful passages from webpages, attach personal notes, and revisit your ideas without losing their original context.
 
-## Quick start
+Instead of bookmarking entire pages and hoping you remember why they mattered, DogEar lets you preserve the exact passages worth returning to.
 
-1. Select a passage on a webpage.
-2. Right-click the selection.
+## ✨ Features
+
+- **Passage Capture:** Save selected text directly from webpages.
+- **Personal Notes:** Attach your own thoughts and observations to saved passages.
+- **Tags:** Organize annotations using custom tags.
+- **Marker Colors:** Visually distinguish saved annotations.
+- **Context Preservation:** Keep saved passages associated with their original source.
+- **Annotation Library:** Access and manage saved annotations from a centralized workspace.
+- **Local-first Design:** Designed around browser-local storage.
+
+## 🚀 Quick Start
+
+Getting started with DogEar is simple:
+
+1. Select a passage on any webpage.
+2. Right-click the highlighted selection.
 3. Choose **Save selection to DogEar**.
-4. Add a note, tags, and a marker color in the popup.
-5. Select **Save to DogEar**.
-6. Choose **Open your full library** to browse and manage your annotations.
+4. Add a personal note.
+5. Assign tags and a marker color.
+6. Select **Save to DogEar**.
+7. Choose **Open your full library** to browse and manage your saved annotations.
 
-## User guide
+That's it. Your research notes no longer need to disappear into the archaeological layers of your browser history.
 
-The extension popup includes a **Read the quick start guide** link. The guide is bundled locally as `public/QUICK-START.html` and is copied into the production `dist/` folder by Vite. Its screenshots live in `public/assets/`.
+## 🧭 User Guide
 
+DogEar includes an illustrated quick-start guide and a printable manual.
 
-- Open [`QUICK-START.html`](QUICK-START.html) in a browser for the illustrated quick-start guide.
-- See [`DogEar-User-Manual.pdf`](DogEar-User-Manual.pdf) for the printable guide.
-- Screenshots used by the guide are in [`assets/`](assets/).
+| Resource | Description |
+|---|---|
+| `QUICK-START.html` | Illustrated browser-based quick-start guide |
+| `DogEar-User-Manual.pdf` | Printable user manual |
+| `assets/` | Screenshots used throughout the documentation |
 
-## Keyboard shortcut
+The extension popup also includes a **Read the quick start guide** link.
 
-The current suggested native extension shortcut is **Alt+Shift+Z**. Browser extension command APIs do not support arbitrary sequential shortcuts such as `Shift+Z`, then `X`. A custom in-page sequence would be a separate feature and is not represented as an implemented shortcut in this guide.
+### Opening the Quick Start Guide
 
-## Privacy
+After extracting the release ZIP:
 
-DogEar is designed around local storage. Optional page access is described in the popup and should be enabled only for sites where you want restored highlights.
+1. Locate `QUICK-START.html`.
+2. Double-click the file.
+3. Open it in your default browser.
 
-## Repository contents
+The guide is included at the archive root for easy access.
 
-- `QUICK-START.html` — illustrated guide that opens locally in a browser.
-- `DogEar-User-Manual.pdf` — printable guide.
-- `assets/` — screenshots used in the guide, including the combined popup capture and annotated context menu.
+## ⌨️ Keyboard Shortcut
 
-## Opening the HTML guide
+The current suggested native browser extension shortcut is:
 
-After extracting the release ZIP, double-click `QUICK-START.html` to open it in your default browser. Browsers and operating systems do not allow a downloaded ZIP to force-open an extracted HTML file automatically; the guide is included at the archive root so it is easy to find.
+**Alt + Shift + Z**
 
-## Screenshot note
+Browser extension command APIs do not support arbitrary sequential shortcuts such as pressing `Shift + Z`, followed by `X`.
 
-The supplied screenshots included the right-click menu and two separate portions of the popup. The two popup portions have been combined into one tall image. No workspace screenshot was supplied, so the guide explains how to open the full library without presenting a fabricated workspace image.
+A custom in-page keyboard sequence would require a separate implementation and is not represented as an existing DogEar shortcut.
+
+## 🔒 Privacy
+
+DogEar is designed around local storage.
+
+Optional page access is described within the extension popup and should only be enabled for websites where restored highlights are desired.
+
+The extension's design prioritizes keeping personal annotations close to the browser rather than requiring a separate cloud-based note-taking service.
+
+## 📁 Repository Contents
+
+```text
+DogEar/
+├── QUICK-START.html
+├── DogEar-User-Manual.pdf
+└── assets/
+    ├── screenshots/
+    └── documentation images
+```
+
+The repository includes the documentation resources distributed with DogEar.
+
+- `QUICK-START.html` provides an illustrated introduction.
+- `DogEar-User-Manual.pdf` provides a printable reference.
+- `assets/` contains the screenshots used in the documentation.
+
+## 🖼️ Documentation Screenshots
+
+The documentation includes:
+
+- The browser right-click context menu.
+- The DogEar popup interface.
+- Combined popup screenshots showing the relevant interface sections.
+
+The workspace is explained through written instructions rather than fabricated screenshots.
+
+## 🛠️ Browser Compatibility
+
+DogEar is intended for browser environments supporting the relevant browser extension APIs.
+
+Its current documentation references native extension keyboard commands and browser-based selection capture.
+
+Browser-specific installation and distribution requirements depend on the target extension store.
+
+## 💡 Philosophy
+
+Bookmarks preserve destinations.
+
+DogEar preserves the thoughts that made those destinations worth visiting.
+
+Whether you're researching a topic, studying, collecting references, or simply finding something interesting while browsing, DogEar helps you keep the important parts.
+
+---
+
+**DogEar**  
+*Preserve the thought • Notes on the web*
